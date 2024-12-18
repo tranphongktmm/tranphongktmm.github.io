@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My_blogs on My Blog</title>
+    <link>https://tranphongktmm.github.io/my_blog.html</link>
+    <description>Recent content in My_blogs on My Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Dec 2024 23:53:02 +0700</lastBuildDate>
+    <atom:link href="https://tranphongktmm.github.io/my_blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Report_koinbase</title>
+      <link>https://tranphongktmm.github.io/my_blog/koinbase/report_koinbase.html</link>
+      <pubDate>Tue, 17 Dec 2024 23:53:02 +0700</pubDate>
+      <guid>https://tranphongktmm.github.io/my_blog/koinbase/report_koinbase.html</guid>
+      <description>&lt;h1 id=&#34;pentest-report-koinbase&#34;&gt;&lt;strong&gt;Pentest report koinbase&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;insngày-03-tháng-12-năm-2024-ins&#34;&gt;&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;Ngày 03 tháng 12 năm 2024 &lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mô-tả&#34;&gt;&lt;strong&gt;Mô tả&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Báo cáo này mô tả chi tiết quá trình và kêt quả kiểm thử ứng dụng Koinbase&lt;/p&gt;&#xA;&lt;h3 id=&#34;đối-tượng&#34;&gt;&lt;strong&gt;Đối tượng&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Koinbase:&lt;/strong&gt; &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;https://koinbase.cyberjutsu-lab.tech/&#34;&gt;https://koinbase.cyberjutsu-lab.tech/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Upload Server:&lt;/strong&gt; &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;https://upload.koinbase.cyberjutsu-lab.tech/&#34;&gt;https://upload.koinbase.cyberjutsu-lab.tech/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Công cụ:&lt;/strong&gt; Burpsuit, VS Code, DevTools&lt;/p&gt;&#xA;&lt;h3 id=&#34;mục-lục&#34;&gt;&lt;strong&gt;Mục Lục&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tổng quan&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
