@@ -6,8 +6,15 @@
     <description>Recent content in My_blogs on My Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Dec 2024 23:53:02 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2024 00:04:05 +0700</lastBuildDate>
     <atom:link href="https://tranphongktmm.github.io/my_blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Report_t1</title>
+      <link>https://tranphongktmm.github.io/my_blog/final_exam_cyberjutsu/report_t1.html</link>
+      <pubDate>Fri, 20 Dec 2024 00:04:05 +0700</pubDate>
+      <guid>https://tranphongktmm.github.io/my_blog/final_exam_cyberjutsu/report_t1.html</guid>
+      <description>&lt;h1 id=&#34;pentest-report&#34;&gt;&lt;strong&gt;PENTEST REPORT&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;insngày-07-tháng-12-năm-2024-ins&#34;&gt;&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;Ngày 07 tháng 12 năm 2024 &lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mô-tả&#34;&gt;&lt;strong&gt;Mô tả&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Báo cáo này mô tả chi tiết quá trình và kết quả kiểm thử ứng dụng T1 Merchandises&lt;/p&gt;&#xA;&lt;h3 id=&#34;đối-tượng&#34;&gt;&lt;strong&gt;Đối tượng&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;t1shop.exam.cyberjutsu-lab.tech&lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;*.exam.cyberjutsu-lab.tech&lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Công cụ:&lt;/strong&gt; Burpsuit, IntelliJ IDEA, VS Code,  DevTools&lt;/p&gt;&#xA;&lt;h3 id=&#34;mục-lục&#34;&gt;&lt;strong&gt;Mục Lục&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tổng quan&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Phạm vi&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Report_koinbase</title>
       <link>https://tranphongktmm.github.io/my_blog/koinbase/report_koinbase.html</link>
